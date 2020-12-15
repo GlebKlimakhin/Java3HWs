@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="client.Controller">
+    <stylesheets>
+        <URL value="@/css/style.css" />
+    </stylesheets>
+
+    <HBox fx:id="authPanel">
+        <TextField fx:id="loginField" prefHeight="37.0" prefWidth="143.0" promptText="login" HBox.hgrow="ALWAYS" />
+        <PasswordField fx:id="passwordField" onAction="#tryToAuth" prefHeight="37.0" prefWidth="175.0" promptText="password" HBox.hgrow="ALWAYS" />
+        <Button minWidth="70" onAction="#tryToAuth" text="Auth" />
+        <Button minWidth="70" onAction="#showRegWindow" text="Reg" />
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS">
+        <TextArea fx:id="textArea" editable="false" />
+        <ListView fx:id="clientList" managed="false" minWidth="100" onMouseReleased="#clickClientlist" visible="false" />
+    </HBox>
+
+
+    <HBox fx:id="msgPanel" managed="false" visible="false">
+        <TextField fx:id="textField" onAction="#sendMsg" promptText="input text" HBox.hgrow="ALWAYS" />
+        <Button onAction="#sendMsg" text="Send" />
+    </HBox>
+
+</VBox>
